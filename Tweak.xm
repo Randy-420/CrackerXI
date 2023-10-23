@@ -1,25 +1,19 @@
-#import <UIKit/UIKit.h>
 #include "Tweak.h"
-#include <objc/runtime.h>
 
 %hook FirstViewController
-
 - (void)getInstalledApplist {
-%orig;
-    Ivar ivar = class_getInstanceVariable([self class], "newAppsList");
-    NSMutableArray *myInstanceArray = object_getIvar(self, ivar);
+	%orig;
+	Ivar ivar = class_getInstanceVariable([self class], "newAppsList");
 
-NSArray *sortedArray = [myInstanceArray sortedArrayUsingComparator: ^(RPVApplication* obj1, RPVApplication* obj2) {
+	NSMutableArray *myInstanceArray = object_getIvar(self, ivar);
 
-    return [[obj1 applicationName] compare:[obj2 applicationName]];
-}];
+	NSArray *sortedArray = [myInstanceArray sortedArrayUsingComparator: ^(RPVApplication* obj1, RPVApplication* obj2) {
 
-//NSLog(@"Randy420: %@", myInstanceArray);
+		return [[obj1 applicationName] compare:[obj2 applicationName]];
+	}];
 
-object_setIvar(self, ivar, [NSMutableArray arrayWithArray:sortedArray]);
-//myInstanceArray = [NSMutableArray arrayWithArray:sortedArray];
-[self.tableView reloadData];
+	object_setIvar(self, ivar, [NSMutableArray arrayWithArray:sortedArray]);
+
+	[self.tableView reloadData];
 }
 %end
-
-

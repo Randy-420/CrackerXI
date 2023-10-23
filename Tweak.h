@@ -1,7 +1,11 @@
+#import <UIKit/UIKit.h>
+#include <Foundation/Foundation.h>
+#include <objc/runtime.h>
+
 @interface FirstViewController:NSObject{
 @protected
-   NSMutableArray *newAppsList;
-   UITableView *_tableView;
+	NSMutableArray *newAppsList;
+	UITableView *_tableView;
 }
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -14,26 +18,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
-
 @class LSApplicationProxy;
-
 @interface RPVApplication : NSObject
 {
-    LSApplicationProxy *_proxy;	// 8 = 0x8
+	LSApplicationProxy *_proxy;
 }
+@property(retain, nonatomic) LSApplicationProxy *proxy;
 
-@property(retain, nonatomic) LSApplicationProxy *proxy; // @synthesize proxy=_proxy;
-- (id)_provisioningProfileAtPath:(id)arg1;	// IMP=0x0000000100043bb8
-- (id)locationOfApplicationOnFilesystem;	// IMP=0x0000000100043b64
-- (BOOL)hasEmbeddedMobileprovision;	// IMP=0x0000000100043a4c
-- (id)applicationExpiryDate;	// IMP=0x0000000100043890
-- (id)tvOSApplicationIcon;	// IMP=0x00000001000437ec
-- (id)applicationIcon;	// IMP=0x00000001000436f8
-- (id)applicationInstalledSize;	// IMP=0x00000001000435c4
-- (id)applicationVersion;	// IMP=0x0000000100043528
-- (id)applicationName;	// IMP=0x000000010004348c
-- (id)bundleIdentifier;	// IMP=0x00000001000433f0
-- (id)initWithApplicationProxy:(id)arg1;	// IMP=0x000000010004337c
-
+- (id)_provisioningProfileAtPath:(id)arg1;
+- (id)locationOfApplicationOnFilesystem;
+- (BOOL)hasEmbeddedMobileprovision;
+- (id)applicationExpiryDate;
+- (id)tvOSApplicationIcon;
+- (id)applicationIcon;
+- (id)applicationInstalledSize;
+- (id)applicationVersion;
+- (id)applicationName;
+- (id)bundleIdentifier;
+- (id)initWithApplicationProxy:(id)arg1;
 @end
