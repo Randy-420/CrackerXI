@@ -2,9 +2,9 @@ Package: com.randy420.crackerxipatch
 Name: CrackerXI+ Patch
 Author: Randy420 <randy.skinner@hotmail.com>
 Description: ***Alphabetically order the applications. It's stupid this wasn't a thought in the first place.***
-Depends: mobilesubstrate, com.ipc.crackerxi | cydia.com.ipc.crackerxi | xyz.cypwn.xyz
+Depends: mobilesubstrate, cydia.com.ipc.crackerxi | xyz.cypwn.crackerxi
 Maintainer: Randy420 <randy.skinner@hotmail.com>
 Architecture: iphoneos-arm
 Depiction: https://Randy-420.GitHub.io/depic/CrackerXI.html
 Section: Tweaks
-Version: 4.2.2
+Version: 4.2.4
