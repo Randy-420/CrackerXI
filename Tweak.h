@@ -3,7 +3,7 @@
 #include <objc/runtime.h>
 
 @interface FirstViewController:NSObject{
-@protected
+//@protected
 	NSMutableArray *newAppsList;
 	UITableView *_tableView;
 }
